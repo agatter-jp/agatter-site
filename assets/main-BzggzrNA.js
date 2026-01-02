@@ -3,7 +3,11 @@
         <h1>人と関わるという行為そのものを、<br>遊びに昇華させる。</h1>
         <p>agatterは、人と人の関係性を遊びに変えるブランドです。</p>
       </section>
-    `,after_render:async()=>{}},h={render:async()=>`
+      <section id="timeline">
+        <h2>Latest Posts</h2>
+        <a class="twitter-timeline" href="https://twitter.com/agatter_jp">Tweets by agatter_jp</a>
+      </section>
+    `,after_render:async()=>{const e=document.createElement("script");e.async=!0,e.src="https://platform.twitter.com/widgets.js",e.charset="utf-8",document.body.appendChild(e)}},h={render:async()=>`
       <section id="about">
         <h2>About</h2>
         <p>
@@ -22,7 +26,7 @@
           私たちは、そんな世界をつくり続ける。
         </p>
       </section>
-    `,after_render:async()=>{}};function g(e){return`
+    `,after_render:async()=>{}};function m(e){return`
     <div class="project-card">
       <div class="project-image">
         <p>（${e.image||"Image"}）</p>
@@ -33,11 +37,11 @@
         <div class="status-tag">${e.status}</div>
       </div>
     </div>
-  `}const m=[{title:"OMOTA",description:"人と人との会話から、新しい物語が生まれるボードゲーム。",status:"準備中",image:"Image"}],y={render:async()=>`
+  `}const g=[{title:"OMOTA",description:"人と人との会話から、新しい物語が生まれるボードゲーム。",status:"準備中",image:"Image"}],y={render:async()=>`
       <section id="projects">
         <h2>Projects</h2>
         <div class="projects-grid">
-          ${m.map(g).join("")}
+          ${g.map(m).join("")}
         </div>
       </section>
     `,after_render:async()=>{}},v={render:async()=>`
@@ -45,4 +49,4 @@
         <h2>404 Not Found</h2>
         <p>The page you are looking for does not exist.</p>
       </section>
-    `,after_render:async()=>{}},b={"/":l,"/about":h,"/projects":y,"/404":v};p(b);f();
+    `,after_render:async()=>{}},w={"/":l,"/about":h,"/projects":y,"/404":v};p(w);f();
