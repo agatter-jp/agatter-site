@@ -125,6 +125,11 @@ h2 {
   gap: 2rem;
 }
 
+#timeline {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr 1fr;
