@@ -75,50 +75,70 @@ main {
 }
 
 section {
+
   margin-bottom: 6rem;
+
+  padding-top: 3rem; /* Add top padding to all sections by default, for consistency */
+
 }
 
-#hero h1 {
+
+
+#about h1 {
+
   font-size: 2.8rem;
+
   font-weight: 700;
+
   line-height: 1.3;
+
   margin-bottom: 1.5rem;
+
   text-align: center;
+
+  color: var(--text-color);
+
+  padding-top: 2rem;
+
 }
 
-#hero p {
+
+
+#about p.sub-purpose {
+
   font-size: 1.1rem;
+
   text-align: center;
+
   max-width: 600px;
-  margin: 0 auto;
+
+  margin: 0 auto 3rem auto;
+
   color: #555;
+
 }
+
+
 
 h2 {
+
   font-size: 1.5rem;
+
   font-weight: 700;
+
   margin-bottom: 2rem;
+
   text-align: center;
+
   letter-spacing: 1px;
+
   text-transform: uppercase;
+
+  padding-top: 3rem; /* Add some padding to general H2s to create more space */
+
 }
 
-#hero-small {
-  text-align: center;
-  padding: 2rem 0;
-}
 
-#hero-small h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-#hero-small p {
-  font-size: 1rem;
-  color: #555;
-  max-width: 500px;
-  margin: 0 auto;
-}
 
 .projects-grid {
   display: grid;
@@ -152,7 +172,7 @@ a:hover {
   opacity: 0.8;
 }
 
-#projects .project-card {
+#products .project-card {
   background-color: var(--card-bg-color);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -164,7 +184,7 @@ a:hover {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#projects .project-card:hover {
+#products .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px var(--shadow-color);
 }
@@ -180,6 +200,14 @@ a:hover {
   justify-content: center;
   color: #aaa;
   font-size: 0.9rem;
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px; /* Match the container's border radius */
 }
 
 .project-description h3 {
@@ -227,7 +255,7 @@ footer {
   #hero h1 {
     font-size: 2.2rem;
   }
-  #projects .project-card {
+  #products .project-card {
     flex-direction: column;
     gap: 1.5rem;
     padding: 1.5rem;

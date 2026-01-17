@@ -2,6 +2,8 @@ export default {
   render: async () => {
     return `
       <section id="about">
+        <h1>人と関わるという行為そのものを、<br>遊びに昇華させる。</h1>
+        <p class="sub-purpose">agatterは、人と人の関係性を遊びに変えるブランドです。</p>
         <h2>About</h2>
         <p>
           人と関わることは、本来少し面倒で、恥ずかしくて、煩わしい。

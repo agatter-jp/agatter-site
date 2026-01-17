@@ -4,14 +4,12 @@ import { setRoutes, setupRouter } from './router.js';
 // Import page modules
 import Home from './pages/home.js';
 import About from './pages/about.js';
-import Projects from './pages/projects.js';
 import NotFound from './pages/404.js';
 
 // Define the routes
 const routes = {
   '/': Home,
   '/about': About,
-  '/projects': Projects,
   '/404': NotFound
 };
 
