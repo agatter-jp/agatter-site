@@ -4,7 +4,7 @@ import { ProjectCard } from '../components/ProjectCard.js';
 const products = [
   {
     title: 'OMOTA',
-    description: '人と人との会話から、新しい物語が生まれるボードゲーム。',
+    description: 'シンプルなのに、毎回違う面白さのカードゲーム。',
     status: '準備中',
     image: '/omota.png'
   }
@@ -22,22 +22,34 @@ export default {
       </section>
       <section id="timeline">
         <h2>Latest Posts</h2>
-        <a class="twitter-timeline" href="https://twitter.com/agatter_jp">Tweets by agatter_jp</a>
+        <a class="twitter-timeline" href="https://x.com/agatter_jp">Tweets by agatter_jp</a>
       </section>
     `;
   },
   after_render: async () => {
-    if (window.twttr && window.twttr.widgets) {
-      const timelineContainer = document.getElementById('timeline');
-      if (timelineContainer) {
-        window.twttr.widgets.load(timelineContainer);
+    const loadTwitterWidget = () => {
+      // Ensure the twttr object and its widgets property are available.
+      if (window.twttr && window.twttr.widgets) {
+        // Scans the entire document for unregistered widgets and renders them.
+        window.twttr.widgets.load();
+      }
+    };
+
+    // If the Twitter script is not yet loaded, create a script tag,
+    // and set its onload callback to the function that renders the widget.
+    if (!window.twttr) {
+      // Avoid adding the script multiple times if after_render is called quickly.
+      if (!document.querySelector('script[src="https://platform.twitter.com/widgets.js"]')) {
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.async = true;
+        script.charset = 'utf-8';
+        script.onload = loadTwitterWidget;
+        document.head.appendChild(script);
       }
     } else {
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = "https://platform.twitter.com/widgets.js";
-      script.charset = "utf-8";
-      document.body.appendChild(script);
+      // If the script is already loaded, just call the load function.
+      loadTwitterWidget();
     }
   }
 };
