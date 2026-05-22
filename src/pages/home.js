@@ -5,8 +5,9 @@ const products = [
   {
     title: 'OMOTA',
     description: 'シンプルなのに、毎回違う面白さのカードゲーム。',
-    status: '準備中',
-    image: '/omota.png'
+
+    image: '/omota.png',
+    link: 'https://gamemarket.jp/game/187476'
   }
 ];
 
